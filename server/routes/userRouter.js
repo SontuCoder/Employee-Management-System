@@ -1,6 +1,7 @@
 import express from "express";
 import User from "../models/User.js"; // Adjust the path based on your project structure
 
+
 const router = express.Router();
 
 // Create a new user
