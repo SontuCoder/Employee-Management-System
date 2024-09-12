@@ -1,0 +1,60 @@
+.userTable{
+    width: 60%;
+    background-color: white;
+    box-shadow: 0 0 8px 10px #0000007a;
+    border-radius: 10px;
+    margin: 50px auto;
+    padding: 50px;
+}
+
+
+#addButton{
+    text-decoration: none;
+    background-color: aquamarine;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 1px #0000007a;
+    margin: 20px;
+    color: black;
+}
+
+.table{
+    margin-top: 30px;
+    width: 100%;
+}
+
+th{
+    background-color: #0000007b;
+    color: white;
+    font-weight: 600;
+}
+
+.userTable table tbody tr td{
+    background-color: white;
+    text-align: center;
+}
+
+#deleteButton{
+    border: 0;
+    outline: none;
+    background-color: rgb(128, 0, 0);
+    color: white;
+    border-radius: 5px;
+    padding: 8px 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#editButton{
+    border: 0;
+    outline: none;
+    text-decoration: none;
+    background-color: rgb(64, 150, 70);
+    color: white;
+    border-radius: 5px;
+    padding: 6px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
