@@ -39,7 +39,7 @@ const Add = () => {
 
   return (
     <div className='addUser'>
-      <Link to={"/"}>Back</Link>
+      <Link to={"/"} id='back'>Back</Link>
       <h3>Add New User</h3>
       <form className='addUserForm' onSubmit={submitForm}>
         {/* Input for Name */}

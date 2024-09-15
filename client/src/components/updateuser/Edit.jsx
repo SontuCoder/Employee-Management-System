@@ -52,7 +52,7 @@ const Edit = () => {
 
   return (
     <div className='addUser'>
-        <Link to={"/"}>Back</Link>
+        <Link to={"/"} id='back'>Back</Link>
         <h3>Update user</h3>
         <form className='addUserForm' onSubmit={submitForm}>
             <div className="inputGroup">

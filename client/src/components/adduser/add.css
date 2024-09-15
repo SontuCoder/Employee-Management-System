@@ -7,6 +7,20 @@
     padding: 50px;
 }
 
+#back{
+    border: 0;
+    outline: none;
+    background-color: rgb(19, 2, 118);
+    color: white;
+    font-weight: 600;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
+    margin-top: 10px;
+    text-decoration: none;
+}
+
 .addUserForm {
     margin-top: 20px;
 }
