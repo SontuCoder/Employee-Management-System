@@ -1,7 +1,7 @@
-<h1>User Management System</h1>
+<h1>Employee Management System</h1>
 <h3>By, Subhadip Maity</h3>
 
-<p>This project is a simple <strong>User Management System</strong> built with a React frontend and Express backend. The system allows users to perform basic CRUD (Create, Read, Update, Delete) operations on user data including <code>name</code>, <code>email</code>, <code>password</code>, <code>salary</code>, and <code>role</code>.</p>
+<p>This project is a simple <strong>Employee Management System</strong> built with a React frontend and Express backend. The system allows users to perform basic CRUD (Create, Read, Update, Delete) operations on user data including <code>name</code>, <code>email</code>, <code>password</code>, <code>salary</code>, and <code>role</code>.</p>
 
 <h2>Features</h2>
 <ul>
