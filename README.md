@@ -41,12 +41,6 @@
 
 <h2>Installation</h2>
 <ol>
-  <li><strong>Clone the repository</strong>:
-    <pre><code>git clone https://github.com/yourusername/user-management-system.git
-cd user-management-system
-    </code></pre>
-  </li>
-
   <li><strong>Install the dependencies</strong>:
     <p>For the backend:</p>
     <pre><code>cd backend
@@ -106,17 +100,6 @@ npm start
 
 README.md                # Project documentation
 </code></pre>
-
-<h2>Screenshots</h2>
-
-<h3>1. Add User Form</h3>
-<img src="https://via.placeholder.com/500x300" alt="Add User Form" />
-
-<h3>2. User List View</h3>
-<img src="https://via.placeholder.com/500x300" alt="User List View" />
-
-<h2>Running Tests</h2>
-<p>No tests are currently set up for this project.</p>
 
 <h2>Future Enhancements</h2>
 <ul>
