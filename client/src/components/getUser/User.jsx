@@ -1,34 +1,65 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import "./User.css";
+import React, { useEffect, useState } from 'react'
+import axios from "axios";
+import toast from "react-hot-toast";
+import "./user.css";
+import { Link } from 'react-router-dom'
 
 const User = () => {
+
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await axios.get("http://localhost:7000/user/getall");
+            setUsers(response.data);
+        }
+        fetchData();
+
+    }, [])
+
+    const deleteUser = async (userId) => {
+        await axios.delete(`http://localhost:7000/user/delete/${userId}`)
+            .then((respones) => {
+                setUsers((prevUser) => prevUser.filter((user) => user._id !== userId))
+                toast.success(respones.data.msg, { position: 'top-right' })
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
+
     return (
         <div className='userTable'>
-            <Link to={"/add"} id='addButton'>Add User</Link>
-            <table className='table' border={1} cellPadding={10} cellSpacing={0}>
+            <Link to={"/add"} className='addButton'>Add User</Link>
+            <table border={1} cellPadding={10} cellSpacing={0}>
                 <thead>
                     <tr>
-                        <th>S.No.</th> 
-                        <th>Name</th>
-                        <th>Email</th>
+                        <th>S.No.</th>
+                        <th>User name</th>
+                        <th>User Email</th>
                         <th>Salary</th>
                         <th>Role</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1.</td>
-                        <td>Sontu</td>
-                        <td>sontu@gmail.com</td>
-                        <td>12000</td>
-                        <td>Manager</td>
-                        <td>
-                            <button id='deleteButton'>Delete</button>
-                            <Link id="editButton" to={"/edit"}>Edit</Link>
-                        </td>
-                    </tr>
+                    {
+                        users.map((user, index) => {
+                            return (
+                                <tr key={user._id}>
+                                    <td>{index + 1}</td>
+                                    <td>{user.name}</td>
+                                    <td>{user.email}</td>
+                                    <td>{user.salary}</td>
+                                    <td>{user.role}</td>
+                                    <td className='actionButtons'>
+                                        <button onClick={() => deleteUser(user._id)}><i className="fa-solid fa-trash"></i></button>
+                                        <Link to={`/edit/` + user._id}><i className="fa-solid fa-pen-to-square"></i></Link>
+                                    </td>
+                                </tr>
+                            )
+                        })
+                    }
                 </tbody>
             </table>
         </div>

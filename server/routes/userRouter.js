@@ -1,7 +1,6 @@
 import express from "express";
 import User from "../models/User.js"; // Adjust the path based on your project structure
 
-
 const router = express.Router();
 
 // Create a new user
@@ -19,8 +18,8 @@ router.post("/create", async (req, res) => {
 router.get("/getAll", async (req, res) => {
     try {
         const users = await User.find();
-        if(!users){
-            return res.status(404).json({msg: "User data not found."});
+        if (!users) {
+            return res.status(404).json({ msg: "No user data found." });
         }
         res.status(200).json(users);
     } catch (error) {
@@ -28,8 +27,8 @@ router.get("/getAll", async (req, res) => {
     }
 });
 
-// Get user by ID
-router.get("/getUser/:id", async (req, res) => {
+// Get user by ID (Make sure the route matches the frontend)
+router.get("/getUser/:id", async (req, res) => {  // Match this route with the frontend
     try {
         const userId = req.params.id;
         const user = await User.findById(userId);
@@ -42,24 +41,26 @@ router.get("/getUser/:id", async (req, res) => {
     }
 });
 
-router.put("/update/:id", async(req,res)=>{
-    try{
+// Update user
+router.put("/update/:id", async (req, res) => {
+    try {
         const userId = req.params.id;
         const user = await User.findById(userId);
         if (!user) {
             return res.status(404).json({ msg: "User not found." });
         }
 
-        const updatedData = await User.findByIdAndUpdate(userId, req.body, {new:true});
-        res.status(200).json(updatedData);
+        const updatedData = await User.findByIdAndUpdate(userId, req.body, { new: true });
+        res.status(200).json({ msg: "User updated successfully", updatedData });
 
-    }catch(error){
-        res.status(500).json({ error: "Error fetching user" });
+    } catch (error) {
+        res.status(500).json({ error: "Error updating user" });
     }
 });
 
-router.delete("/delete/:id", async(req,res)=>{
-    try{
+// Delete user
+router.delete("/delete/:id", async (req, res) => {
+    try {
         const userId = req.params.id;
         const user = await User.findById(userId);
         if (!user) {
@@ -67,13 +68,11 @@ router.delete("/delete/:id", async(req,res)=>{
         }
 
         await User.findByIdAndDelete(userId);
-        res.status(200).json({msg:"User delete successfully"});
+        res.status(200).json({ msg: "User deleted successfully" });
 
-    }catch(error){
-        res.status(500).json({ error: "Error fetching user" });
+    } catch (error) {
+        res.status(500).json({ error: "Error deleting user" });
     }
 });
-
-
 
 export default router;
