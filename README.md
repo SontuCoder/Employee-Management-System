@@ -109,5 +109,3 @@ README.md                # Project documentation
   <li>Improve UI with more responsive and modern design.</li>
 </ul>
 
-<h2>License</h2>
-<p>This project is licensed under the MIT License - see the <code>LICENSE</code> file for details.</p>
