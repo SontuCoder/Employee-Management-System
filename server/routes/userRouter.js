@@ -8,11 +8,14 @@ router.post("/create", async (req, res) => {
     try {
         const newUser = new User(req.body);
         const savedUser = await newUser.save();
-        res.status(201).json(savedUser);
+        res.status(201).json({sucess:true,
+            savedUser:savedUser});
     } catch (error) {
-        res.status(500).json({ error: "Error creating user" });
+        res.status(500).json({ sucess:false,
+            error: "Error creating user" });
     }
 });
+
 
 // Get all users
 router.get("/getAll", async (req, res) => {

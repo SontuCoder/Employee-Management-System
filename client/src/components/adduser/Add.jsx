@@ -29,8 +29,12 @@ const Add = () => {
     e.preventDefault(); // Prevent default form submission behavior
     try {
       const response = await axios.post("http://localhost:7000/user/create", user);
-      toast.success('New user added successfully!', { position: "top-right" });
-      navigate("/"); // Redirect to home after successful submission
+      if(response.success){
+        toast.success('New user added successfully!', { position: "top-right" });
+        navigate("/"); // Redirect to home after successful submission
+      } else {
+        toast.error('Error!', { position: "top-right" });
+      }
     } catch (error) {
       console.error(error);
       toast.error('Failed to add user', { position: "top-right" });
