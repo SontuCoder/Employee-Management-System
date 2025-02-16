@@ -29,7 +29,7 @@ const Add = () => {
     e.preventDefault(); // Prevent default form submission behavior
     try {
       const response = await axios.post("http://localhost:7000/user/create", user);
-      if(response.success){
+      if(response.data.success){
         toast.success('New user added successfully!', { position: "top-right" });
         navigate("/"); // Redirect to home after successful submission
       } else {
@@ -108,7 +108,7 @@ const Add = () => {
 
         {/* Input for Role */}
         <div className="inputGroup">
-          <label htmlFor="role">Role</label>
+          <label htmlFor="role">Role (Manager/Employee)</label>
           <input
             type="text"
             value={user.role}
