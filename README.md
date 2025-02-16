@@ -1,6 +1,5 @@
 # User Management System
-<img src="./client/public/logo.jpg" alt="SontuCoder" width="40px" height="40px">
-## By, Subhadip Maity.
+<img src="./client/public/logo.jpg" alt="SontuCoder" width="40px" height="40px"> By, Subhadip Maity.
 
 ## Description
 This project is a simple **User Management System** built with a React frontend and Express backend. The system allows users to perform basic CRUD (Create, Read, Update, Delete) operations on user data, including `name`, `email`, `password`, `salary`, and `role`.
@@ -79,10 +78,10 @@ The system provides the following API endpoints:
 
 ## Images
 - New user Add form
-<img src="./client/public/Macbook-Air-localhost.png" width="300px">
+<img src="./client/public/Macbook-Air-localhost.png" width="500px">
 
 - Employee Tables
-<img src="./client/public/Macbook-Air-localhost (1).png" width="300px">
+<img src="./client/public/Macbook-Air-localhost (1).png" width="500px">
 
 ## Notes
 ### Future Enhancements
